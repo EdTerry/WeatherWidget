@@ -9,12 +9,14 @@ import reactor.core.publisher.Mono;
 
 @Component
 public class ZipApiFetcher implements ApiFetcher {
-  @Value("${zippopotam.base-url}")
-  private String baseUrl;
-  @Value("${zippopotam.path}")
-  private String path;
   private static final Logger logger = LoggerFactory.getLogger(ZipApiFetcher.class);
   private final ApiServiceImpl apiService;
+
+  @Value("${zippopotam.base-url}")
+  private String baseUrl;
+
+  @Value("${zippopotam.path}")
+  private String path;
 
   public ZipApiFetcher(final ApiServiceImpl apiService) {
     this.apiService = apiService;

@@ -10,15 +10,18 @@ import reactor.core.publisher.Mono;
 
 @Component
 public class WeatherApiFetcher implements ApiFetcher {
-  @Value("${openweather.api-key}")
-  private String apiKey;
-  @Value("${openweather.base-url}")
-  private String baseUrl;
-  @Value("${openweather.path}")
-  private String path;
   private static final Logger logger = LoggerFactory.getLogger(WeatherApiFetcher.class);
   private final ApiServiceImpl apiService;
   private final ZipApiFetcher zipApiFetcher;
+
+  @Value("${openweather.api-key}")
+  private String apiKey;
+
+  @Value("${openweather.base-url}")
+  private String baseUrl;
+
+  @Value("${openweather.path}")
+  private String path;
 
   public WeatherApiFetcher(final ApiServiceImpl apiService, final ZipApiFetcher zipApiFetcher) {
     this.apiService = apiService;

@@ -16,11 +16,11 @@ public record WeatherRecord(
     long id,
     String name,
     int cod) {
-  public static record Coord(double lon, double lat) {}
+  public record Coord(double lon, double lat) {}
 
-  public static record Weather(int id, String main, String description, String icon) {}
+  public record Weather(int id, String main, String description, String icon) {}
 
-  public static record Main(
+  public record Main(
       double temp,
       @JsonProperty("feels_like") double feelsLike,
       @JsonProperty("temp_min") double tempMin,
@@ -28,9 +28,9 @@ public record WeatherRecord(
       double pressure,
       int humidity) {}
 
-  public static record Wind(double speed, double deg) {}
+  public record Wind(double speed, double deg) {}
 
-  public static record Clouds(int all) {}
+  public record Clouds(int all) {}
 
-  public static record Sys(int type, int id, String country, long sunrise, long sunset) {}
+  public record Sys(int type, int id, String country, long sunrise, long sunset) {}
 }

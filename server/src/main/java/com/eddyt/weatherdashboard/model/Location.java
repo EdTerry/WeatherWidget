@@ -6,4 +6,11 @@ public record Location(
     @JsonProperty("post code") String postCode,
     String country,
     @JsonProperty("country abbreviation") String countryAbbreviation,
-    Place[] places) {}
+    Place[] places) {
+  public record Place(
+      @JsonProperty("place name") String placeName,
+      String longitude,
+      String state,
+      @JsonProperty("state abbreviation") String stateAbbreviation,
+      String latitude) {}
+}

@@ -19,7 +19,7 @@ public class ApiServiceImpl implements ApiService {
         .baseUrl(uri)
         .build()
         .get()
-        .uri(path, (Object []) varargs)
+        .uri(path, (Object[]) varargs)
         .retrieve()
         .bodyToMono(responseType);
   }
